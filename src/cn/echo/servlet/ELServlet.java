@@ -1,6 +1,8 @@
 package cn.echo.servlet;
 
 import java.io.IOException;
+
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -27,6 +29,9 @@ public class ELServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		request.setAttribute("msg", "你好我是来自于"+this.getClass().getName());
+		request.setAttribute("msg1", "你好我是来自于"+this.getClass().getName());
+		ServletContext context = getServletContext();
+		context.setAttribute("msg", "我是application属性"+this.getClass().getName());
 		request.getRequestDispatcher("eldemo.jsp").forward(request, response);
 	}
 
