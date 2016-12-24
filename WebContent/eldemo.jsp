@@ -24,7 +24,23 @@
   取完对象用对象名圆点符号调用成员方法获取值:${user.getName()}<br/>
   取完对象用圆点符号调用大括号后面那个成员变量对应的get方法:${user.name}<br/>
   取完对象用圆点符号调用大括号后面那个成员变量对应的get方法${user.age}
-
-
+<form action="#" method="get">
+  普通文本框<input type="text" name="name.x">
+<input type="checkbox" value="111111" name="y">
+<input type="checkbox" value="22222" name="y" checked>
+<input type="checkbox" value="33333" name="y">
+<input type="submit" value="提交">
+<input name="password" type="password"/> 
+</form>
+param只能得到单一的参数
+纯圆点符号${param.name.x}<br/>
+中括号访问${param['name.x']}<br/>
+复选框值${param.y}<br/>
+普通元素的name${param.password}<br/>
+paramValues得到一组请求参数 ---类似数组<br/>
+取对象${paramValues.y}<br/>
+取第一个值${paramValues.y[0]}<br/>
+取第二个值${paramValues.y[1]}<br/>
+取第三个值${paramValues.y[2]}<br/>
 </body>
 </html>
