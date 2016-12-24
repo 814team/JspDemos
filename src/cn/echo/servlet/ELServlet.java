@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import cn.echo.model.User;
+
 /**
  * Servlet implementation class ELServlet
  */
@@ -16,12 +18,12 @@ import javax.servlet.http.HttpServletResponse;
 public class ELServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-    /**
-     * Default constructor. 
-     */
-    public ELServlet() {
-        // TODO Auto-generated constructor stub
-    }
+	/**
+	 * Default constructor. 
+	 */
+	public ELServlet() {
+		// TODO Auto-generated constructor stub
+	}
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
@@ -32,6 +34,11 @@ public class ELServlet extends HttpServlet {
 		request.setAttribute("msg1", "你好我是来自于"+this.getClass().getName());
 		ServletContext context = getServletContext();
 		context.setAttribute("msg", "我是application属性"+this.getClass().getName());
+		User user = new User();
+		user.setName("张三");
+		user.setSex("man");
+		
+		request.setAttribute("user", user);
 		request.getRequestDispatcher("eldemo.jsp").forward(request, response);
 	}
 

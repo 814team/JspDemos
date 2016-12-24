@@ -19,6 +19,12 @@
   取request对象里面数据${requestScope.msg}
   再取request对象里面的其他数据${requestScope.msg1}
   取application ${applicationScope.msg}$
-   
+<br/>
+  直接取对象:${user}<br/>
+  取完对象用对象名圆点符号调用成员方法获取值:${user.getName()}<br/>
+  取完对象用圆点符号调用大括号后面那个成员变量对应的get方法:${user.name}<br/>
+  取完对象用圆点符号调用大括号后面那个成员变量对应的get方法${user.age}
+
+
 </body>
 </html>
