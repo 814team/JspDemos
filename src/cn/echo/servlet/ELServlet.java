@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import cn.echo.model.Info;
 import cn.echo.model.User;
 
 /**
@@ -35,9 +36,12 @@ public class ELServlet extends HttpServlet {
 		ServletContext context = getServletContext();
 		context.setAttribute("msg", "我是application属性"+this.getClass().getName());
 		User user = new User();
+		Info i = new Info();
+		i.setMsg("你好我是msg");
+		user.setInfo(i);
 		user.setName("张三");
 		user.setSex("man");
-		
+		request.getServletContext().getContextPath();
 		request.setAttribute("user", user);
 		request.getRequestDispatcher("eldemo.jsp").forward(request, response);
 	}
