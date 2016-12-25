@@ -1,0 +1,90 @@
+<li>
+			<h3>&lt;c:remove标签</h3>
+			<p>
+				执行:&lt;c:set var="removevar" value="I'm remove var value"
+				scope="request"&gt;&lt;/p&gt;
+				<c:set var="removevar" value="I'm remove var value" scope="request"></c:set>
+
+			</p>
+			<p>
+				移除前输出
+				<c:out value="${removevar}"></c:out>
+
+			</p>
+			<p>
+				执行:&lt;c:remove var="removevar" scope="request"/&gt;
+				<c:remove var="removevar" scope="request" />
+			</p>
+			<p>
+				移除后输出
+				<c:out value="${removevar}"></c:out>
+			</p>
+
+		</li>
+		<li>
+			<h3>&lt;c:if标签&gt;</h3>
+			<p>执行:&lt;c:if test="${2>1}" var="result" scope="request"&gt;
+				&lt;c:out value="你好2>1"/&gt; $""{"requestScope.result} &lt;/c:if&gt;</p>
+			<p>
+				显示数据:
+				<c:if test="${2>1}" var="result" scope="request">
+					<c:out value="你好2>1" />
+		           ${requestScope.result}
+		     </c:if>
+			</p>
+		</li>
+		<li>
+			<h3>&lt;c:choose&gt;、&lt;c:when&gt;、&lt;c:otherwise&gt;标签</h3>
+
+			<p>执行: &lt;c:choose&gt;
+			<p>&lt;c:when test="$'{2>1}"&gt; 我是true &lt;/c:when&gt;</p>
+			<p>&lt;c:otherwise&gt; 我是false &lt;/c:otherwise&gt;</p>
+			&lt;/c:choose&gt;
+
+			</p>
+			<p>
+				显示数据
+				<c:choose>
+					<c:when test="${2>1}">
+		        			 我是true
+		         </c:when>
+					<c:otherwise>
+		       				 我是false
+		        </c:otherwise>
+
+				</c:choose>
+			</p>
+		</li>
+		<li>
+			<h3>&lt;c:forEach&gt;标签</h3>
+			<ul>
+				遍历数据
+				<li><p>执行:</p>
+					<p>
+						显示数据
+						<c:forEach varStatus="status" var="temp" step="2" begin="1"
+							end="5">
+							<p>
+								当前数据
+								<c:out value="${temp}"></c:out>
+								下标index: ${status.index} 计数 count: ${status.count } 是否是第一个
+								${status.first } 是否是最后一个 ${status.last}
+							</p>
+						</c:forEach></li>
+				<li>遍历集合数组
+					<p>执行</p>
+					<p>显示数据</p> <% java.util.List list = new java.util.ArrayList();
+		          list.add(1);
+		          list.add(2);
+		          list.add("你好");
+		         request.setAttribute("listdata", list); %> <c:forEach
+						items="${listdata}" varStatus="status" var="item">
+						<p>当前数据 ${item} 下标index: ${status.index} 计数 count:
+							${status.count } 是否是第一个 ${status.first } 是否是最后一个 ${status.last}</p>
+					</c:forEach>
+
+				</li>
+			</ul>
+
+			</p>
+		</li>

@@ -53,5 +53,6 @@ EL运算<br/>
 为空判断:存在——》${empty requestScope.msg}<br/>
 三目条件运算:${16<5?'small':"big" }<br/>
 获取上下文路径:${pageContext.request.contextPath }
+ 
 </body>
 </html>
