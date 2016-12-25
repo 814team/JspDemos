@@ -23,17 +23,17 @@
 	%>
 	EL表达式的对象对应java对象的数据域 数据域类型是java.util.Map EL表达式的对象类型java.util.Map类型
    <br/>
-	pageContext:${pageContext.page}
+	     pageContext:${pageContext.page}
 	<br /> pageScope:${pageScope.msg}
 	<br /> requestScope:${requestScope.msg}
 	<br /> sessionScope:${sessionScope.msg}
 	<br /> application:${applicationScope.msg }
-	<br /> param:${param.msg}
-	<br /> paramValues:${paramValues.msg}
-	<br /> header:${header.msg }
-	<br /> headerValues:${headerValues.msg}
-	<br /> cookie: ${cookie.msg}
-	<br /> initParam:${initParam.msg}
+	<br /> param:${param.msg}   请求参数提交表单的数据或者URL参数，获取单个数据
+	<br /> paramValues:${paramValues.msg} 请求参数提交表单的数据或者URL参数，获取一组数据
+	<br /> header:${header.Connection } 获取的是请求头信息对象名后面跟上请求头的name信息
+	<br /> headerValues:${headerValues.msg}  获取的是一组头信息
+	<br /> cookie: ${cookie.JSESSIONID}  获取cookie里面的信息
+	<br /> initParam:${initParam.User-Agent}
 	<br />
 </body>
 </html>
