@@ -6,8 +6,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 </head>
-<body>
+<body><a href="index.jsp">返回主页</a>
 <form>
+
   <input type="text" name="msg" value="first input"/>
   <input type="text" name="msg" value="second input"/>
    <input type="submit" value="提交"/>
