@@ -13,6 +13,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>JSTL测试</title>
 </head>
+ 
 <body>
 	<a href="index.jsp">返回主页</a>
 	<ul>
@@ -35,7 +36,7 @@
 			<ul>
 				<li>
 					<p>(1)执行&lt;c:set var="jstlvar" value="I'm jstlv
-						value"&gt;&lt;/c:set&gt; &lt;c:out value="$'{jstlvar}"&gt;</p>
+						value"&gt;&lt;/c:set&gt; &lt;c:out value="$<span/>{jstlvar}"&gt;</p>
 					<p>
 						输出数据
 						<c:set var="jstlvar" value="I'm jstlv value" scope="request"></c:set>
@@ -47,11 +48,11 @@
 						java.util.Map&lt;String,String&gt; map = new
 						java.util.HashMap&lt;String,String&gt;(); <br />
 						map.put("mapmsg", "mapvalue"); <br />request.setAttribute("map1",map);
-					</p> <br />$'{map1.mapmsg} 修改前的map属性值:${map1.mapmsg} <br /> <c:set
+					</p> <br />$<span/>{map1.mapmsg} 修改前的map属性值:${map1.mapmsg} <br /> <c:set
 						target="${map1}" property="mapmsg" value="m" />
-					<p>执行&lt;c:set target="$'{map1}" property="mapmsg" value="m"
+					<p>执行&lt;c:set target="$<span/>{map1}" property="mapmsg" value="m"
 						/&gt;之后</p>
-					<p>$'{map1.mapmsg}修改过的map属性值:${map1.mapmsg}</p> <br />
+					<p>$<span/>{map1.mapmsg}修改过的map属性值:${map1.mapmsg}</p> <br />
 					</p>
 					<h3>总结-----&lt;c:set&gt;:设置某个变量的值 ,修改某个变量的值</h3>
 					<ul>
@@ -68,7 +69,7 @@
 			<h3>&lt;c:out&gt;标签总结</h3>
 			<h3>&lt;c:out&gt;属性测试数据</h3>
 			<p>
-				执行&lt;c:out value="$'{msg1}" default="默认
+				执行&lt;c:out value="$<span/>{msg1}" default="默认
 				<c:out value="&nbsp值" escapeXml="true" />
 				" escapeXml="false"&gt;&lt;/c:out&gt;
 			</p>
@@ -88,9 +89,9 @@
 			<h3>&lt;c:remove&gt;标签</h3>
 			<p>执行:&lt;c:set var="removevar" value="willremovevar"
 				scope="request"/&gt; &lt;c:out
-				value="$'{requestScope.removevar}"/&gt; &lt;c:remove
+				value="$<span/>{requestScope.removevar}"/&gt; &lt;c:remove
 				var="removevar"/&gt; &lt;c:out
-				value="$'{requestScope.removevar}"/&gt;</p>
+				value="$<span/>{requestScope.removevar}"/&gt;</p>
 			<p>显示:
 			<ul>
 				<li>设置变量位置<c:set var="removevar" value="willremovevar"
@@ -103,7 +104,7 @@
 		</li>
 		<li>
 			<h3>&lt;c:if&gt;标签</h3>
-			<p>执行: &lt;c:if test="$'{5>3}"&gt; if判断结果为true执行 &lt;/c:if&gt;</p>
+			<p>执行: &lt;c:if test="$<span/>{5>3}"&gt; if判断结果为true执行 &lt;/c:if&gt;</p>
 			<p>
 				显示:
 				<c:if test="${5>3}">
@@ -114,18 +115,11 @@
 		<li>
 			<h3>&lt;c:choose&gt; &lt;c:when&gt; &lt;c:otherwise&gt;</h3>
 			<p>
-			&lt;form&gt;<br/>
-				&lt;input type="text" name="age" value="18" /&gt;<br/>
-				&lt;input type="submit" value="提交测试" /&gt;<br/>
-			&lt;/form&gt;<br/>
-			 执行: <br/>&lt;c:choose&gt;<br/>
-				&lt;c:when test="$'{param.age>=18}"&gt;
-                 <br/> 我已经成年
-              <br/>  &lt;/c:when&gt;
-				<br/>&lt;c:otherwise&gt;
-                      <br/>我还未成年
-			<br/>	&lt;/c:otherwise&gt;
-			<br/>&lt;/c:choose&gt;
+				&lt;form&gt;<br /> &lt;input type="text" name="age" value="18"
+				/&gt;<br /> &lt;input type="submit" value="提交测试" /&gt;<br />
+				&lt;/form&gt;<br /> 执行: <br />&lt;c:choose&gt;<br /> &lt;c:when
+				test="$<span/>{param.age>=18}"&gt; <br /> 我已经成年 <br /> &lt;/c:when&gt; <br />&lt;c:otherwise&gt;
+				<br />我还未成年 <br /> &lt;/c:otherwise&gt; <br />&lt;/c:choose&gt;
 			</p>
 			<p>显示:
 			<form>
@@ -142,17 +136,87 @@
 			</p>
 		</li>
 		<li>
-		   <h3>&lt;c:forEach&gt;标签</h3>
-		   <p>执行:&lt;c:forEach var="temp" begin="1" end="10"&gt;
-		       显示结果:&lt;c:out value="$'{temp}"/&gt;
-		   &lt;/c:forEach&gt;</p>
-		   <p>显示：
-		   <c:forEach var="temp" begin="1" end="10">
-		       <p>显示结果:<c:out value="${temp}"/></p>
-		   </c:forEach>
-		   
-		   </p>
+			<h3>&lt;c:forEach&gt;标签</h3>
+			<ul>
+				<li>begin end添加数据测试
+					<p>
+						执行:&lt;c:forEach var="temp" step = "2" begin="1" end="10"&gt;<br />
+						&lt;p&gt;<br />显示结果:&lt;c:out value="$<span/>{temp}"/&gt;
+						下标$<span/>{status.index} 计数$<span/>{status.count}<br />
+						是否为第一个$<span/>{status.first} 是否为最后一个$<span/>{status.last}<br />&lt;/p&gt; <br />&lt;/c:forEach&gt;
+					</p>
+					<p>
+						显示：
+						<c:forEach var="temp" varStatus="status" step="2" begin="1"
+							end="10">
+							<p>显示结果:
+							<p>
+								显示数据:
+								<c:out value="${temp}" />
+								下标${status.index} 计数${status.count} 是否为第一个${status.first}
+								是否为最后一个${status.last}
+							</p>
+					</p> </c:forEach>
+
+					</p>
+				</li>
+				<li>用items属性遍历集合里面的值</li>
+				<p>
+					执行:&lt;%<br /> java.util.List list = new java.util.ArrayList();<br />
+					list.add(1);<br /> list.add(2);<br /> list.add("3");<br />
+					list.add("四");<br /> request.setAttribute("listdata",list);<br />
+					%&gt;<br /> &lt;c:forEach var="item" items="$<span/>{listdata}"&gt;<br />
+					&lt;p&gt;<br />显示数据$<span/>{item} 下标$<span/>{status.index} 计数$<span/>{status.count}
+					是否为第一个$<span/>{status.first} 是否为最后一个$<span/>{status.last}<br />&lt;/p&gt; <br />&lt;/c:forEach&gt;
+
+				</p>
+				<p>
+					显示:<%
+				   java.util.List list = new java.util.ArrayList();
+				           list.add(1);
+				           list.add(2);
+				           list.add("3");
+				           list.add("四");
+				           request.setAttribute("listdata",list);
+			     	%>
+					<c:forEach var="item" varStatus="status" items="${listdata}">
+						<p>显示数据${item} 下标${status.index} 计数${status.count}
+							是否为第一个${status.first} 是否为最后一个${status.last}</p>
+					</c:forEach>
+				</p>
+
+			</ul>
 		</li>
+		<li>
+			<h3>&lt;c:url&gt;</h3>
+			<p>
+				执行: <br />
+				&lt;c:url var="urlvar" value="http://www.baidu.com"&gt;
+					<br />
+					<br />
+					&lt;c:param name="username" value="admin"&gt;&lt;/c:param&gt;
+					<br />
+					&lt;c:param name="password" value="admin123"&gt;&lt;/c:param&gt;
+					<br />
+				&lt;/c:url&gt;
+				<br /> &lt;a href="${urlvar}"&gt;跳转到百度&lt;/a&gt; <br />
+				 &lt;a href="${urlvar}"&gt;友情链接&lt;/a&gt;
+			</p>
+			<p>
+				显示:
+				<c:url var="urlvar" value="http://www.baidu.com">
+					 
+					<c:param name="username" value="admin"></c:param>
+					<c:param name="password" value="admin123"></c:param>
+				</c:url>
+				<a href="${urlvar}">跳转到百度</a>
+				<br/> <a href="${urlvar}">友情链接</a>
+			</p>
+		</li>
+          <li>
+                           <h3>重定向标签打开页面会自动跳转另一个页面
+                          &lt;c:redirect url="http://www.baidu.com"/&gt;</h3>
+          </li>
 	</ul>
 </body>
 </html>
