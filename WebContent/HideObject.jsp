@@ -8,7 +8,9 @@
 </head>
 <body>
 <form>
-  <input type="text" name="msg" value="I'm from text msg please sumbmit get  result"/>
+  <input type="text" name="msg" value="first input"/>
+  <input type="text" name="msg" value="second input"/>
+   <input type="submit" value="提交"/>
   </form>
 	<%
 		pageContext.setAttribute("msg", "我是来自于pageContext");
@@ -27,13 +29,13 @@
 	<br /> pageScope:${pageScope.msg}
 	<br /> requestScope:${requestScope.msg}
 	<br /> sessionScope:${sessionScope.msg}
-	<br /> application:${applicationScope.msg }
+	<br /> applicationScope:${applicationScope.msg }
 	<br /> param:${param.msg}   请求参数提交表单的数据或者URL参数，获取单个数据
-	<br /> paramValues:${paramValues.msg} 请求参数提交表单的数据或者URL参数，获取一组数据
+	<br /> paramValues:${paramValues.msg[1]} 请求参数提交表单的数据或者URL参数，获取一组数据
 	<br /> header:${header.Connection } 获取的是请求头信息对象名后面跟上请求头的name信息
-	<br /> headerValues:${headerValues.msg}  获取的是一组头信息
-	<br /> cookie: ${cookie.JSESSIONID}  获取cookie里面的信息
-	<br /> initParam:${initParam.User-Agent}
+	<br /> headerValues:${headerValues.Accept[0]}  获取的是一组头信息
+	<br /> cookie: ${cookie.JSESSIONID.value}  获取cookie里面的信息
+	<br /> initParam:${initParam.pppppp}
 	<br />
 </body>
 </html>
