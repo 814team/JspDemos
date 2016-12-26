@@ -7,9 +7,11 @@
 <title>登陆</title>
 </head>
 <body>
-<form action="" method="POST">
-  <input type="text"/>
-  <input type="text"/>
+<form action="LoginServlet.do" method="POST">
+  <input type="text" name="username"/>
+  <input type="text" name="password"/>
+  <input type="submit" value="登陆"/>
+  <input type="reset" value="重置"/>
 </form>
 </body>
 </html>

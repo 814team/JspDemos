@@ -13,6 +13,8 @@
 		<li><a href="JSTLPager.jsp">JSTL常用标签测试测试</a></li>
 		<li><a href="JSTLFNPager.jsp">JSTL fn标签测试</a>
 	    <li><a href="UserDefineTag.jsp">用户自定义标签</a>
+	    <li><a href="Login.jsp">Cookie测试</a>
+	
 	</ul>
 </body>
 </html>
