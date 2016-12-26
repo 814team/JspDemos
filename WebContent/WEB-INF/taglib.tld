@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taglib xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-jsptaglibrary_2_1.xsd"
+	version="2.1">
+	<!--开始定义 -->
+	<description>我是自定义标签</description>
+	<display-name>echo</display-name>
+	<tlib-version>1.0</tlib-version>
+
+	<short-name>e</short-name>
+	<uri>http://www.echoedu.cn/tag/echo</uri>
+	<!-- 上面一部分jsp参考调用 -->
+
+
+	<!-- 下面一部分是描述文件找java类的信息 -->
+	<tag>
+		<name>hello</name>
+		<tag-class>cn.echo.mytag.MyTag</tag-class>
+		<body-content>empty</body-content>
+	</tag>
+	<tag>
+		<name>helloworld</name>
+		<tag-class>cn.echo.mytag.MyTag1</tag-class>
+		<body-content>empty</body-content>
+		<attribute>
+			<name>username</name>
+		</attribute>
+	</tag>
+
+
+
+</taglib>

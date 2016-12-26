@@ -31,6 +31,7 @@ public class ELServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		
 		request.setAttribute("msg", "你好我是来自于"+this.getClass().getName());
 		request.setAttribute("msg1", "你好我是来自于"+this.getClass().getName());
 		ServletContext context = getServletContext();

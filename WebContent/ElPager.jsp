@@ -7,7 +7,7 @@
 <title>EL表达式测试</title>
 </head>
 <body>
-<a href="index.jsp">返回主页</a>
+<%@ include file="navhead.jsp" %>
   我是用request隐含对象去取值 <% 
       String msg = (String)request.getAttribute("msg");
        out.write(msg);

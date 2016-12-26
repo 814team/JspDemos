@@ -6,7 +6,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 </head>
-<body><a href="index.jsp">返回主页</a>
+<body>
+<%@ include file="navhead.jsp" %>
 <form>
 
   <input type="text" name="msg" value="first input"/>

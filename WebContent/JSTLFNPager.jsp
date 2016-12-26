@@ -8,7 +8,7 @@
 <title>fn标签测试页面</title>
 </head>
 <body>
-<a href="index.jsp">返回主页</a>
+<%@ include file="navhead.jsp" %>
 <ul>
   <li>
    <h3>$<span></span>{fn:contains(name, searchString)}</h3>

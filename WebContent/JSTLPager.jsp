@@ -13,7 +13,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>JSTL测试</title>
 </head>
- 
+ <%@ include file="navhead.jsp" %>
 <body>
 	<a href="index.jsp">返回主页</a>
 	<ul>
