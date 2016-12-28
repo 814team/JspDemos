@@ -31,7 +31,7 @@ public class ELServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		
+		System.out.println("执行请求 ");
 		request.setAttribute("msg", "你好我是来自于"+this.getClass().getName());
 		request.setAttribute("msg1", "你好我是来自于"+this.getClass().getName());
 		ServletContext context = getServletContext();
@@ -45,6 +45,7 @@ public class ELServlet extends HttpServlet {
 		request.getServletContext().getContextPath();
 		request.setAttribute("user", user);
 		request.getRequestDispatcher("eldemo.jsp").forward(request, response);
+		System.out.println("请求结束");
 	}
 
 	/**

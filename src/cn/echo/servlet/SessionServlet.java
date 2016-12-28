@@ -32,17 +32,6 @@ public class SessionServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		
-		//一个用户一个request对象  两个用户的request对象毫不相关
-		//两个用户会产生两个session对象  
-		HttpSession session = request.getSession();
-		String username = (String) session.getAttribute("username");
-		User user = new User();
-		session.setAttribute("user", user);
-		if(username!=null&&!"".equals(username)){
-			response.sendRedirect("LoginSuccess.jsp");
-		}else{
-			response.sendRedirect("Login.jsp");
-		}
 	}
 
 	/**
