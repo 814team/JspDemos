@@ -7,8 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-  <a href="LoginServlet.do">登陆成功了,访问后台测试cookie是否过期</a>
-  <p>${sessionScope.username}</p>
-   <p>${requestScope.cookie}</p>
+我是第二个获取session值的页面
+MSG:${sessionScope.msg}
+<p>username:${sessionScope.username}</p>
+<p>requestMsg:${requestScope.msg }</p>
 </body>
 </html>

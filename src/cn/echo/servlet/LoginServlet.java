@@ -49,6 +49,8 @@ public class LoginServlet extends HttpServlet {
 		Boolean isLoginSuccess = false;//
 		System.out.println(username);
 		System.out.println(password);
+		
+		//说明用户登录了新的账号
 		if(username!=null&&password!=null&&!"".equals(username)&&!"".equals(password)){
 			Cookie cookie = new Cookie("username",username);
 			Cookie cookie2 = new Cookie("password",password);
@@ -57,14 +59,15 @@ public class LoginServlet extends HttpServlet {
 			response.addCookie(cookie);
 			response.addCookie(cookie2);
 			isLoginSuccess=true;
-			response.sendRedirect("LoginSuccess.jsp");
-		}else{
+			response.sendRedirect("LoginSuccess.jsp");//跳转页面同时把cookie发送给了客户端
+		}else{//取到的username和password界面传过来数据为空
+//			用户在某个页面没有登陆框这个页面也是本网站
 			Cookie[] cookies  = request.getCookies();
 			for(Cookie c:cookies){
 				if("username".equals(c.getName())){
 					String currentUserName=c.getValue();
 					if(currentUserName!=null&&!"".equals(currentUserName.trim())){
-					  isLoginSuccess=true;
+					   isLoginSuccess=true;
 						response.sendRedirect("LoginSuccess.jsp");
 					}
 					

@@ -14,6 +14,7 @@
 		<li><a href="JSTLFNPager.jsp">JSTL fn标签测试</a>
 	    <li><a href="UserDefineTag.jsp">用户自定义标签</a>
 	    <li><a href="Login.jsp">Cookie测试</a>
+	     <li><a href="SessionTest.jsp">Session测试</a>
 	
 	</ul>
 </body>

@@ -4,11 +4,14 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>登陆</title>
 </head>
 <body>
-  <a href="LoginServlet.do">登陆成功了,访问后台测试cookie是否过期</a>
-  <p>${sessionScope.username}</p>
-   <p>${requestScope.cookie}</p>
+<form action="SessionServlet.do" method="POST">
+  <input type="text" name="username"/>
+  <input type="text" name="password"/>
+  <input type="submit" value="登陆"/>
+  <input type="reset" value="重置"/>
+</form>
 </body>
 </html>

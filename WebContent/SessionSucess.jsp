@@ -7,8 +7,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-  <a href="LoginServlet.do">登陆成功了,访问后台测试cookie是否过期</a>
-  <p>${sessionScope.username}</p>
-   <p>${requestScope.cookie}</p>
+<p>sessionMsg:${sessionScope.msg}</p>
+<p>username:${sessionScope.username}</p>
+<p>requestMsg:${requestScope.msg }</p>
+<p><a href="InvalidateLogin.do">注销</a>
+<p><a href="SessionSecond.jsp">再跳转一次</a></p>
+<p><a href="SessionServlet.do">测试用户是否登陆，测试session是否失效</a></p>
 </body>
 </html>
