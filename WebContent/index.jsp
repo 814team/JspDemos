@@ -17,7 +17,9 @@
 	     <li><a href="SessionLogin.jsp">Session测试</a>
 	     <li><a href="FileUpload.jsp">文件上传测试</a>
 	    <li><a href="FileDownload.jsp">文件下载测试</a>
-	    
+	    <li><a href="ServletContextServlet">ServletContextAttributeListener测试</a>
+	      <li><a href="AjaxRequest.jsp">Ajax测试</a>
+	     
 	</ul>
 </body>
 </html>

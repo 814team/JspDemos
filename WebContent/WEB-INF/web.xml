@@ -21,4 +21,7 @@
     <filter-name>LoginFilter</filter-name>
     <url-pattern>/*</url-pattern>
   </filter-mapping>
+  <listener>
+    <listener-class>cn.echo.listener.AppListener</listener-class>
+  </listener>
 </web-app>

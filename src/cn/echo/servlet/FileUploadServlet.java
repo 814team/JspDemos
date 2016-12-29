@@ -48,9 +48,9 @@ public class FileUploadServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 //		basic(request);
 		System.out.println(request.getHeader("content-Type"));
-		//1:创建工厂类---用来创建请求解析器
+		//1:创建工厂类---用来创建请求解析器--请求解析器可以解析请求报文里面的文件
 		DiskFileItemFactory factory = new DiskFileItemFactory();
-		//2:创建请求解析器----通过工厂来创建请求解析器
+		//2:创建请求解析器(servlet文件上传类)----通过工厂来创建请求解析器
 		ServletFileUpload fileUpload = new ServletFileUpload(factory);
 		//3:设置上传文件参数 byte----Kbyte---M---G--T-
 		fileUpload.setFileSizeMax(1024*1024*3);//最大单个文件

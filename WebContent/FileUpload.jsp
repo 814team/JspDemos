@@ -8,8 +8,11 @@
 </head>
 <body>
 <form action="FileUploadServlet" method="post" enctype="multipart/form-data">
+  
   <input type="text" name="filename"/>
   <input type="file" name="file"/>
+  
+  
   <input type="submit" value="上传"/>
 </form>
 </body>
