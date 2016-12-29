@@ -33,28 +33,29 @@ public class LoginFilter implements Filter{
 	public void doFilter(ServletRequest request, ServletResponse response,
 			FilterChain chain) throws IOException, ServletException {
 		// TODO Auto-generated method stub
-		System.out.println("doFilter");
-		HttpServletResponse	response1 = (HttpServletResponse)response;
-		HttpServletRequest request1 = ((HttpServletRequest)request);
-		HttpSession session = request1.getSession();
-		String username1 = request1.getParameter("username");
-		
-		if(username1!=null&&!"".equals(username1)){//判断是否是登陆如果是并且跟数据库匹配跳转到下个页面
-			//跟数据库比较如果比较失败
-			session.setAttribute("username", username1);
-			chain.doFilter(request, response);//doFilter已经处理完毕继续向下			
-		}else{//不是登陆页面
-			//一个用户一个request对象  两个用户的request对象毫不相关
-			//两个用户会产生两个session对象  
-			String username = (String) session.getAttribute("username");
-			User user = new User();
-			session.setAttribute("user", user);
-			if(username!=null&&!"".equals(username)){
-				chain.doFilter(request, response);
-			}else{
-				request.getRequestDispatcher("SessionLogin.jsp").forward(request, response1);;
-			}
-		}
+		chain.doFilter(request, response);//doFilter已经处理完毕继续向下			
+//		System.out.println("doFilter");
+//		HttpServletResponse	response1 = (HttpServletResponse)response;
+//		HttpServletRequest request1 = ((HttpServletRequest)request);
+//		HttpSession session = request1.getSession();
+//		String username1 = request1.getParameter("username");
+//		
+//		if(username1!=null&&!"".equals(username1)){//判断是否是登陆如果是并且跟数据库匹配跳转到下个页面
+//			//跟数据库比较如果比较失败
+//			  session.setAttribute("username", username1);
+//			chain.doFilter(request, response);//doFilter已经处理完毕继续向下			
+//		}else{//不是登陆页面
+//			//一个用户一个request对象  两个用户的request对象毫不相关
+//			//两个用户会产生两个session对象  
+//			String username = (String) session.getAttribute("username");
+//			User user = new User();
+//			session.setAttribute("user", user);
+//			if(username!=null&&!"".equals(username)){
+//				chain.doFilter(request, response);
+//			}else{
+//				request.getRequestDispatcher("SessionLogin.jsp").forward(request, response1);;
+//			}
+//		}
 
 	}
 

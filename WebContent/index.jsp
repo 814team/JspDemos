@@ -15,7 +15,9 @@
 	    <li><a href="UserDefineTag.jsp">用户自定义标签</a>
 	    <li><a href="CookieLogin.jsp">Cookie测试</a>
 	     <li><a href="SessionLogin.jsp">Session测试</a>
-	
+	     <li><a href="FileUpload.jsp">文件上传测试</a>
+	    <li><a href="FileDownload.jsp">文件下载测试</a>
+	    
 	</ul>
 </body>
 </html>

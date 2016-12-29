@@ -6,4 +6,6 @@
 		<li><a href="https://github.com/814team/JspDemos/blob/master/WebContent/JSTLFNPager.jsp">JSTL fn标签测试</a></li>
 	    <li><a href="https://github.com/814team/JspDemos/blob/master/WebContent/UserDefineTag.jsp">用户自定义标签</a></li>
 	    <li><a href="https://github.com/814team/JspDemos/blob/master/WebContent/Login.jsp">Cookie自动登录功能测试</a></li>
+	  <li><a href="https://github.com/814team/JspDemos/blob/master/WebContent/FileUpload.jsp">文件上传测试</a>
+	   
 	</ul>
